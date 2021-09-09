@@ -33,9 +33,9 @@ package object styles {
     def lighten(color: String, coefficient: js.UndefOr[Double]): String = js.native
   }
 
-  @JSImport("@material-ui/core/styles/createMuiTheme.js", JSImport.Default)
+  @JSImport("@material-ui/core/styles/createTheme.js", JSImport.Default)
   @js.native
-  object createMuiTheme extends js.Function1[js.UndefOr[ThemeOptions], Theme] {
+  object createTheme extends js.Function1[js.UndefOr[ThemeOptions], Theme] {
     override def apply(options: js.UndefOr[ThemeOptions] = js.undefined): Theme = js.native
   }
 
