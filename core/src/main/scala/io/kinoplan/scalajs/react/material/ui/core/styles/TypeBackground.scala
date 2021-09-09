@@ -13,7 +13,7 @@ object TypeBackground {
   def apply(
     default: String,
     paper: String
-  ) = {
+  ): TypeBackground = {
     val o: Map[String, Any] = Map(
       "default" -> default,
       "paper" -> paper

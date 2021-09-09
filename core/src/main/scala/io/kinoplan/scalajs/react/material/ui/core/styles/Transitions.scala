@@ -17,7 +17,7 @@ object Transitions {
     duration: Duration,
     create: js.Function2[js.Array[String], js.UndefOr[CreateTransitionsOptions], String],
     getAutoHeightDuration: Double => Double
-  ) = {
+  ): Transitions = {
     val o: Map[String, Any] = Map(
       "easing" -> easing,
       "duration" -> duration,

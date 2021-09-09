@@ -6,9 +6,10 @@ import scala.scalajs.js
 import scala.scalajs.js.{Object, |}
 import scala.scalajs.js.JSConverters._
 
-import japgolly.scalajs.react.{CallbackTo, Children, CtorType}
+import japgolly.scalajs.react.{Children, CtorType}
 import japgolly.scalajs.react.component.Js
-import japgolly.scalajs.react.raw.React
+import japgolly.scalajs.react.facade.React
+import japgolly.scalajs.react.util.Effect.Sync
 import japgolly.scalajs.react.vdom.{TagMod, VdomElement, VdomNode}
 import japgolly.scalajs.react.vdom.Implicits._
 
@@ -30,8 +31,8 @@ package object bridge extends GeneratedImplicits {
   implicit def unitWriter: JsWriter[Unit] = writerFromConversion[Unit]
   implicit def jsAnyWriter[A <: js.Any]: JsWriter[A] = JsWriter(identity)
 
-  implicit def callbackToWriter[T](implicit writerT: JsWriter[T]): JsWriter[CallbackTo[T]] =
-    JsWriter(value => value.map(writerT.toJs).runNow())
+  implicit def callbackToWriter[F[_], T](implicit writerT: JsWriter[T], x: Sync[F]): JsWriter[F[T]] =
+    JsWriter(value => x.runSync(x.map(value)(writerT.toJs)))
 
   implicit def undefOrWriter[A](implicit writerA: JsWriter[A]): JsWriter[js.UndefOr[A]] =
     JsWriter(_.map(writerA.toJs))
@@ -89,7 +90,7 @@ package object bridge extends GeneratedImplicits {
   type JsComponentType = Js.ComponentSimple[Object, CtorType.Summoner.Aux[Object, Children.Varargs, CtorType.PropsAndChildren]#CT, Js.UnmountedWithRawType[Object, Null, Js.RawMounted[Object, Null]]]
 
   def extractPropsAndChildren(attrAndChildren: Seq[TagMod]): (js.Object, List[VdomNode]) = {
-    val b = new japgolly.scalajs.react.vdom.Builder.ToJs {}
+    val b = new japgolly.scalajs.react.vdom.VdomBuilder.ToJs {}
     attrAndChildren.toTagMod.applyTo(b)
     b.addClassNameToProps()
     b.addStyleToProps()

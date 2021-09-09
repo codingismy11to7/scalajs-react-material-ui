@@ -21,7 +21,7 @@ object TypeActionPartial {
     selected: js.UndefOr[String] = js.undefined,
     disabled: js.UndefOr[String] = js.undefined,
     disabledBackground: js.UndefOr[String] = js.undefined
-  ) = {
+  ): TypeActionPartial = {
     val o: Map[String, Any] = Seq(
       active.toOption.map("active" -> _),
       hover.toOption.map("hover" -> _),

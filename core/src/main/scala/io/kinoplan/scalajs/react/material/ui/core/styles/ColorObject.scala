@@ -14,7 +14,7 @@ object ColorObject {
   def apply(
     `type`: ColorFormatValues,
     values: (Double, Double, Double) | (Double, Double, Double, Double)
-  ) = {
+  ): ColorObject = {
     val o: Map[String, Any] = Map(
       "type" -> `type`,
       "values" -> values

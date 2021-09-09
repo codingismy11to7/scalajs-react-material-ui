@@ -37,7 +37,7 @@ object ColorPartial {
     `A200`: js.UndefOr[String] = js.undefined,
     `A400`: js.UndefOr[String] = js.undefined,
     `A700`: js.UndefOr[String] = js.undefined
-  ) = {
+  ): ColorPartial = {
     val o: Map[String, Any] = Seq(
       `50`.toOption.map("50" -> _),
       `100`.toOption.map("100" -> _),

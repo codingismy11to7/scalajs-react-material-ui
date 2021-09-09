@@ -16,7 +16,7 @@ object CreateTransitionsOptions {
     duration: js.UndefOr[Int | String] = js.undefined,
     easing: js.UndefOr[String] = js.undefined,
     delay: js.UndefOr[Int | String] = js.undefined
-  ) = {
+  ): CreateTransitionsOptions = {
     val o: Map[String, Any] = Seq(
       duration.toOption.map("duration" -> _),
       easing.toOption.map("easing" -> _),

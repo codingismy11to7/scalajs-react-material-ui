@@ -21,7 +21,7 @@ object TypeAction {
     selected: String,
     disabled: String,
     disabledBackground: String
-  ) = {
+  ): TypeAction = {
     val o: Map[String, Any] = Map(
       "active" -> active,
       "hover" -> hover,

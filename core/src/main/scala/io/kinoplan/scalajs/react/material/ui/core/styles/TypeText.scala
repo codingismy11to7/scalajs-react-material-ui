@@ -17,7 +17,7 @@ object TypeText {
     secondary: String,
     disabled: String,
     hint: String
-  ) = {
+  ): TypeText = {
     val o: Map[String, Any] = Map(
       "primary" -> primary,
       "secondary" -> secondary,

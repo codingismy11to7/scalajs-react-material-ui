@@ -38,7 +38,7 @@ object PaletteOptions {
     action: js.UndefOr[TypeActionPartial] = js.undefined,
     background: js.UndefOr[TypeBackgroundPartial] = js.undefined,
     getContrastText: js.UndefOr[String => String] = js.undefined
-  ) = {
+  ): PaletteOptions = {
     val o: Map[String, Any] = Seq(
       primary.toOption.map("primary" -> _),
       secondary.toOption.map("secondary" -> _),

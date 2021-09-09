@@ -13,7 +13,7 @@ object CommonColorsPartial {
   def apply(
     black: js.UndefOr[String] = js.undefined,
     white: js.UndefOr[String] = js.undefined
-  ) = {
+  ): CommonColorsPartial = {
     val o: Map[String, Any] = Seq(
       black.toOption.map("black" -> _),
       white.toOption.map("white" -> _)

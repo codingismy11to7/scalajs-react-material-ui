@@ -8,7 +8,7 @@ object Settings {
 
   val isScalaJSVersion06 = Option(System.getenv("SCALAJS_VERSION")).exists(_.startsWith("0.6"))
 
-  val isDemoEnabled = Option(System.getenv("DEMO_ENABLED")).getOrElse("1").startsWith("1")
+  val isDemoEnabled = false//Option(System.getenv("DEMO_ENABLED")).getOrElse("1").startsWith("1")
 
   val isPublishVersion = Option(System.getenv("PUBLISH_VERSION")).getOrElse("0").startsWith("1")
 
@@ -21,7 +21,8 @@ object Settings {
   }
 
   val scalajsDependenciesLib = Def.setting(Seq(
-    Dependencies.scalaJsReactCore.value
+    Dependencies.scalaJsReactCoreGeneric.value,
+    Dependencies.scalaJsReactDummyUtil.value
   ))
 
   val scalajsDependenciesDemo = Def.setting(Seq(
@@ -30,6 +31,7 @@ object Settings {
     Dependencies.scalaCssExtReact.value,
     Dependencies.scalaCssExtScalatags.value,
     Dependencies.scalaJsDom.value,
+    Dependencies.scalaJsReactCallback.value,
     Dependencies.scalaJsReactCore.value,
     Dependencies.scalaJsReactExtra.value
   ))

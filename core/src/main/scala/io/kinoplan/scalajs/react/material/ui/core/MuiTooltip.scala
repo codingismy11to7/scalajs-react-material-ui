@@ -3,10 +3,10 @@ package io.kinoplan.scalajs.react.material.ui.core
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
-import japgolly.scalajs.react.ReactEventFromHtml
 import japgolly.scalajs.react.vdom.html_<^._
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
+import io.kinoplan.scalajs.react.material.ui.html.ReactEventFromHtml
 
 object MuiTooltip extends ReactBridgeComponent with MuiTooltipExtensions {
   override protected lazy val componentValue: js.Function = RawComponent

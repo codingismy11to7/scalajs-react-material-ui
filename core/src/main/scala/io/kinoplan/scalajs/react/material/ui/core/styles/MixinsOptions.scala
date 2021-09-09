@@ -13,7 +13,7 @@ object MixinsOptions {
   def apply(
     gutters: js.UndefOr[js.UndefOr[CSSProperties] => CSSProperties] = js.undefined,
     toolbar: js.UndefOr[CSSProperties] = js.undefined
-  ) = {
+  ): MixinsOptions = {
     val o: Map[String, Any] = Seq(
       gutters.toOption.map("gutters" -> _),
       toolbar.toOption.map("toolbar" -> _)

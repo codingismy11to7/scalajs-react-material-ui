@@ -17,7 +17,7 @@ object PaletteColorOptions {
     main: String,
     dark: js.UndefOr[String] = js.undefined,
     contrastText: js.UndefOr[String] = js.undefined
-  ) = {
+  ): PaletteColorOptions = {
     val o: Map[String, Any] = Seq(
       light.toOption.map("light" -> _),
       Some("main" -> main),

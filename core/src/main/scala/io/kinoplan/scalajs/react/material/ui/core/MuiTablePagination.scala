@@ -4,11 +4,10 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
-import japgolly.scalajs.react.ReactEvent
 import japgolly.scalajs.react.vdom.html_<^._
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithPropsNoChildren}
-import io.kinoplan.scalajs.react.material.ui.html.ReactEventFromNumberInput
+import io.kinoplan.scalajs.react.material.ui.html.{ReactEvent, ReactEventFromNumberInput}
 
 object MuiTablePagination extends ReactBridgeComponent with MuiTablePaginationExtensions {
   override protected lazy val componentValue: js.Function = RawComponent

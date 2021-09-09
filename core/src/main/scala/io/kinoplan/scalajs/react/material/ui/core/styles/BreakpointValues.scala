@@ -19,7 +19,7 @@ object BreakpointValues {
     md: Int,
     lg: Int,
     xl: Int
-  ) = {
+  ): BreakpointValues = {
     val o: Map[String, Any] = Map(
       "xs" -> xs,
       "sm" -> sm,

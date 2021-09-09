@@ -13,7 +13,7 @@ object CommonColors {
   def apply(
     black: String,
     white: String
-  ) = {
+  ): CommonColors = {
     val o: Map[String, Any] = Map(
       "black" -> black,
       "white" -> white

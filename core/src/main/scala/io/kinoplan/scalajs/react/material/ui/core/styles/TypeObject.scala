@@ -17,7 +17,7 @@ object TypeObject {
     action: TypeAction,
     divider: String,
     background: TypeBackground
-  ) = {
+  ): TypeObject = {
     val o: Map[String, Any] = Map(
       "text" -> text,
       "action" -> action,

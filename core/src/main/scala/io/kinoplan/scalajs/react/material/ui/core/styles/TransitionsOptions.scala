@@ -17,7 +17,7 @@ object TransitionsOptions {
     duration: js.UndefOr[DurationPartial] = js.undefined,
     create: js.UndefOr[js.Function2[js.Array[String], js.UndefOr[CreateTransitionsOptions], String]] = js.undefined,
     getAutoHeightDuration: js.UndefOr[Double => Double] = js.undefined
-  ) = {
+  ): TransitionsOptions = {
     val o: Map[String, Any] = Seq(
       easing.toOption.map("easing" -> _),
       duration.toOption.map("duration" -> _),

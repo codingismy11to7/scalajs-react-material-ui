@@ -3,7 +3,7 @@ package io.kinoplan.scalajs.react.material.ui.lab
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
-import japgolly.scalajs.react.ReactEventFromHtml
+import japgolly.scalajs.react.internal.CoreGeneral.ReactEventFromHtml
 import japgolly.scalajs.react.vdom.html_<^.VdomNode
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}

@@ -13,7 +13,7 @@ object TypeBackgroundPartial {
   def apply(
     default: js.UndefOr[String] = js.undefined,
     paper: js.UndefOr[String] = js.undefined
-  ) = {
+  ): TypeBackgroundPartial = {
     val o: Map[String, Any] = Seq(
       default.toOption.map("default" -> _),
       paper.toOption.map("paper" -> _),

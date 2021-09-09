@@ -9,7 +9,7 @@ trait Shape extends js.Object {
 }
 
 object Shape {
-  def apply(borderRadius: Double) = {
+  def apply(borderRadius: Double): Shape = {
     val o = Map[String, Any](
       "borderRadius" -> borderRadius
     )

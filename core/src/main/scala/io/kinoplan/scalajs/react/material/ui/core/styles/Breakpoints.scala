@@ -24,7 +24,7 @@ object Breakpoints {
     between: String | Double => String,
     only: String | Double => String,
     width: String | Double => String
-  ) = {
+  ): Breakpoints = {
     val o: Map[String, Any] = Map(
       "keys" -> keys,
       "values" -> values,

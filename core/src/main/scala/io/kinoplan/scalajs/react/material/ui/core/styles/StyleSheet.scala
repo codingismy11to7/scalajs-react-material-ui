@@ -6,5 +6,5 @@ import scala.scalajs.js
 trait StyleSheet extends js.Object {}
 
 object StyleSheet {
-  def apply() = js.Object().asInstanceOf[StyleSheet]
+  def apply(): StyleSheet = js.Object().asInstanceOf[StyleSheet]
 }

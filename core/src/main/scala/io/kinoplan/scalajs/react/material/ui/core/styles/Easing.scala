@@ -17,7 +17,7 @@ object Easing {
     easeOut: String,
     easeIn: String,
     sharp: String
-  ) = {
+  ): Easing = {
     val o: Map[String, Any] = Map(
       "easeInOut" -> easeInOut,
       "easeOut" -> easeOut,

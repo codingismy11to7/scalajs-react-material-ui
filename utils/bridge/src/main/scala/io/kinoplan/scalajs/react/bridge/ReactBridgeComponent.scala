@@ -39,7 +39,7 @@ abstract class ReactBridgeComponent {
     (componentPrefixes :+ componentName).foldLeft(global.globalThis)(_ selectDynamic _)
   }
 
-  protected lazy val jsComponent: JsComponentType = JsComponent[js.Object, Children.Varargs, Null](componentValue)
+  protected lazy val jsComponent: JsComponentType = component.Js[js.Object, Children.Varargs, Null](componentValue)
 
   def auto: WithProps = macro ReactBridgeComponent.autoImpl
 

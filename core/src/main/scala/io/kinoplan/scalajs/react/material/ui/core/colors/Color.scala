@@ -37,7 +37,7 @@ object Color {
     `A200`: String,
     `A400`: String,
     `A700`: String
-  ) = {
+  ): Color = {
     val o: Map[String, Any] = Map(
       "50" -> `50`,
       "100" -> `100`,

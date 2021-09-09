@@ -9,7 +9,7 @@ trait StylesCreatorOptions extends js.Object {
 }
 
 object StylesCreatorOptions {
-  def apply(index: Int) = {
+  def apply(index: Int): StylesCreatorOptions = {
     val o: Map[String, Any] = Map("index" -> index)
 
     o.toJSDictionary.asInstanceOf[js.Object].asInstanceOf[StylesCreatorOptions]

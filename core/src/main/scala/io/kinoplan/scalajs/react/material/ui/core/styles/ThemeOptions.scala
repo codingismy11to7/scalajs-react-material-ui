@@ -33,7 +33,7 @@ object ThemeOptions {
     spacing: js.UndefOr[SpacingOptions] = js.undefined,
     transitions: js.UndefOr[TransitionsOptions] = js.undefined,
     typography: js.UndefOr[TypographyOptions | js.Function1[Palette, TypographyOptions]] = js.undefined
-  ) = {
+  ): ThemeOptions = {
     val o: Map[String, Any] = Seq(
       shape.toOption.map("shape" -> _),
       breakpoints.toOption.map("breakpoints" -> _),

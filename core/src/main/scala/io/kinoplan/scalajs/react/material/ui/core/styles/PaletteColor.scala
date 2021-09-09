@@ -19,7 +19,7 @@ object PaletteColor {
     main: String,
     dark: String,
     contrastText: String
-  ) = {
+  ): PaletteColor = {
     val o: Map[String, Any] = Map(
       "light" -> light,
       "main" -> main,

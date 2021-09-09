@@ -23,7 +23,7 @@ object Duration {
     complex: Int,
     enteringScreen: Int,
     leavingScreen: Int
-  ) = {
+  ): Duration = {
     val o: Map[String, Any] = Map(
       "shortest" -> shortest,
       "shorter" -> shorter,

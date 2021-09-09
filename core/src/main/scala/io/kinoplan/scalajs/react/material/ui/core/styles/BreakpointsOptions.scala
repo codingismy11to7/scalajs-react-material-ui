@@ -28,7 +28,7 @@ object BreakpointsOptions {
     between: js.UndefOr[(String, String) => String] = js.undefined,
     only: js.UndefOr[String => String] = js.undefined,
     width: js.UndefOr[String => Double] = js.undefined
-  ) = {
+  ): BreakpointsOptions = {
     val o: Map[String, Any] = Seq(
       unit.toOption.map("unit" -> _),
       step.toOption.map("step" -> _),

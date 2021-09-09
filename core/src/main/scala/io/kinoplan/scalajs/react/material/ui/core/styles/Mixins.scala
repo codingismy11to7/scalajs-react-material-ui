@@ -13,7 +13,7 @@ object Mixins {
   def apply(
     gutters: js.UndefOr[CSSProperties] => CSSProperties,
     toolbar: CSSProperties
-  ) = {
+  ): Mixins = {
     val o: Map[String, Any] = Map(
       "gutters" -> gutters,
       "toolbar" -> toolbar

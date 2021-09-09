@@ -23,7 +23,7 @@ object DurationPartial {
     complex: js.UndefOr[Int] = js.undefined,
     enteringScreen: js.UndefOr[Int] = js.undefined,
     leavingScreen: js.UndefOr[Int] = js.undefined
-  ) = {
+  ): DurationPartial = {
     val o: Map[String, Any] = Seq(
       shortest.toOption.map("shortest" -> _),
       shorter.toOption.map("shorter" -> _),

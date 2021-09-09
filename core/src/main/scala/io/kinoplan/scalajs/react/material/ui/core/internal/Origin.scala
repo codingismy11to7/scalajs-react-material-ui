@@ -14,7 +14,7 @@ object Origin {
   def apply(
     horizontal: String | Double,
     vertical: String | Double
-  ) = {
+  ): Origin = {
     val o: Map[String, Any] = Map(
       "horizontal" -> horizontal,
       "vertical" -> vertical

@@ -17,7 +17,7 @@ object ColorFormatValues {
     rgba: String,
     hsl: String,
     hsla: String
-  ) = {
+  ): ColorFormatValues = {
     val o: Map[String, Any] = Map(
       "rgb" -> rgb,
       "rgba" -> rgba,

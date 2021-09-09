@@ -17,7 +17,7 @@ object TypeTextPartial {
     secondary: js.UndefOr[String] = js.undefined,
     disabled: js.UndefOr[String] = js.undefined,
     hint: js.UndefOr[String] = js.undefined
-  ) = {
+  ): TypeTextPartial = {
     val o: Map[String, Any] = Seq(
       primary.toOption.map("primary" -> _),
       secondary.toOption.map("secondary" -> _),

@@ -3,9 +3,8 @@ package io.kinoplan.scalajs.react.material.ui.core
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
-import japgolly.scalajs.react.ReactEvent
-
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
+import io.kinoplan.scalajs.react.material.ui.html.ReactEvent
 
 object MuiModal extends ReactBridgeComponent with MuiModalExtensions {
   override protected lazy val componentValue: js.Function = RawComponent

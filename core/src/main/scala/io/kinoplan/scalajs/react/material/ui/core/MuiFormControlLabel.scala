@@ -4,11 +4,11 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
-import japgolly.scalajs.react.ReactEvent
-import japgolly.scalajs.react.raw.React
+import japgolly.scalajs.react.facade.React
 import japgolly.scalajs.react.vdom.html_<^._
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithPropsNoChildren}
+import io.kinoplan.scalajs.react.material.ui.html.ReactEvent
 
 object MuiFormControlLabel extends ReactBridgeComponent with MuiFormControlLabelExtensions {
   override protected lazy val componentValue: js.Function = RawComponent

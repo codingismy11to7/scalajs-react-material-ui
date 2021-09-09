@@ -17,7 +17,7 @@ object EasingPartial {
     easeOut: js.UndefOr[String] = js.undefined,
     easeIn: js.UndefOr[String] = js.undefined,
     sharp: js.UndefOr[String] = js.undefined
-  ) = {
+  ): EasingPartial = {
     val o: Map[String, Any] = Seq(
       easeInOut.toOption.map("easeInOut" -> _),
       easeOut.toOption.map("easeOut" -> _),

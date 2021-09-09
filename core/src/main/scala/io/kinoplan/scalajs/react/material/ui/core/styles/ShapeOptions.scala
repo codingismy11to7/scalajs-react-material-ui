@@ -9,7 +9,7 @@ trait ShapeOptions extends js.Object {
 }
 
 object ShapeOptions {
-  def apply(borderRadius: js.UndefOr[Double] = js.undefined) = {
+  def apply(borderRadius: js.UndefOr[Double] = js.undefined): ShapeOptions = {
     val o: Map[String, Any] = borderRadius.toOption.map("borderRadius" -> _).toMap
 
     o.toJSDictionary.asInstanceOf[js.Object].asInstanceOf[ShapeOptions]
