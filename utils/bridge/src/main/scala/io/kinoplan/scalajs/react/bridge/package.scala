@@ -32,7 +32,7 @@ package object bridge extends GeneratedImplicits {
   implicit def jsAnyWriter[A <: js.Any]: JsWriter[A] = JsWriter(identity)
 
   implicit def callbackToWriter[F[_], T](implicit writerT: JsWriter[T], x: Async[F]): JsWriter[F[T]] =
-    JsWriter(value => x.dispatch(x.map(value)(writerT.toJs)))
+    JsWriter(value => x.dispatchFn(x.map(value)(writerT.toJs)))
 
   implicit def undefOrWriter[A](implicit writerA: JsWriter[A]): JsWriter[js.UndefOr[A]] =
     JsWriter(_.map(writerA.toJs))
