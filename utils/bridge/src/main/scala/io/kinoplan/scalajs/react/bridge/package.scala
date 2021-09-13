@@ -12,6 +12,7 @@ import japgolly.scalajs.react.facade.React
 import japgolly.scalajs.react.util.Effect.Async
 import japgolly.scalajs.react.vdom.{TagMod, VdomElement, VdomNode}
 import japgolly.scalajs.react.vdom.Implicits._
+import org.scalajs.dom
 
 package object bridge extends GeneratedImplicits {
   def writerFromConversion[A](implicit conv: A => js.Any): JsWriter[A] = JsWriter(x => x)
@@ -32,7 +33,10 @@ package object bridge extends GeneratedImplicits {
   implicit def jsAnyWriter[A <: js.Any]: JsWriter[A] = JsWriter(identity)
 
   implicit def callbackToWriter[F[_], T](implicit writerT: JsWriter[T], x: Async[F]): JsWriter[F[T]] =
-    JsWriter(value => x.dispatchFn(x.map(value)(writerT.toJs)))
+    JsWriter(value => {
+      dom.console.log("in cb writer value", value, "writerT", writerT, "async", x)
+      x.dispatch(x.map(value)(writerT.toJs))
+    })
 
   implicit def undefOrWriter[A](implicit writerA: JsWriter[A]): JsWriter[js.UndefOr[A]] =
     JsWriter(_.map(writerA.toJs))
