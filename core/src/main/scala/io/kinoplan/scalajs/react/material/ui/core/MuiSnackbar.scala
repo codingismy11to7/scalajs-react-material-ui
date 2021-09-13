@@ -4,6 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
+import japgolly.scalajs.react.util.Effect.Dispatch
 import japgolly.scalajs.react.vdom.html_<^._
 import org.scalajs.dom.html
 
@@ -18,7 +19,7 @@ object MuiSnackbar extends ReactBridgeComponent with MuiSnackbarExtensions {
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     action: js.UndefOr[VdomNode] = js.undefined,
     anchorOrigin: js.UndefOr[Origin] = js.undefined,
     autoHideDuration: js.UndefOr[Int] = js.undefined,
@@ -27,13 +28,13 @@ object MuiSnackbar extends ReactBridgeComponent with MuiSnackbarExtensions {
     ContentProps: js.UndefOr[js.Object] = js.undefined,
     disableWindowBlurListener: js.UndefOr[Boolean] = js.undefined,
     message: js.UndefOr[VdomNode] = js.undefined,
-    onClose: js.UndefOr[ReactHandler2[ReactEvent, String]] = js.undefined,
-    onEnter: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onEntered: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onEntering: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExit: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExited: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExiting: js.UndefOr[Handler1[html.Element]] = js.undefined,
+    onClose: js.UndefOr[ReactHandler2[F, ReactEvent, String]] = js.undefined,
+    onEnter: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onEntered: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onEntering: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExit: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExited: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExiting: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
     open: js.UndefOr[Boolean] = js.undefined,
     resumeHideDuration: js.UndefOr[Int] = js.undefined,
     TransitionComponent: js.UndefOr[ComponentPropType] = js.undefined,

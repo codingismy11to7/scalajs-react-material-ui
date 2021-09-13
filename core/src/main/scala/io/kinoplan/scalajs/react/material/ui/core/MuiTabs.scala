@@ -3,6 +3,8 @@ package io.kinoplan.scalajs.react.material.ui.core
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
+import japgolly.scalajs.react.util.Effect.Dispatch
+
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
 import io.kinoplan.scalajs.react.material.ui.html.ReactEvent
 
@@ -13,13 +15,13 @@ object MuiTabs extends ReactBridgeComponent with MuiTabsExtensions {
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     action: js.UndefOr[OnJSEv1[ReactEvent]] = js.undefined,
     centered: js.UndefOr[Boolean] = js.undefined,
     classes: js.UndefOr[Map[ClassKey.Value, String]] = js.undefined,
     component: js.UndefOr[ComponentPropType] = js.undefined,
     indicatorColor: js.UndefOr[IndicatorColor.Value] = js.undefined,
-    onChange: js.UndefOr[ReactHandler2[ReactEvent, js.Any]] = js.undefined,
+    onChange: js.UndefOr[ReactHandler2[F, ReactEvent, js.Any]] = js.undefined,
     ScrollButtonComponent: js.UndefOr[ComponentPropType] = js.undefined,
     scrollButtons: js.UndefOr[ScrollButtons.Value] = js.undefined,
     TabIndicatorProps: js.UndefOr[js.Object] = js.undefined,

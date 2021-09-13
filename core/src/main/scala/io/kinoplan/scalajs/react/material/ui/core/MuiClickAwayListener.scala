@@ -4,6 +4,8 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
+import japgolly.scalajs.react.util.Effect.Dispatch
+
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
 import io.kinoplan.scalajs.react.material.ui.html.ReactEventFromHtml
 
@@ -14,9 +16,9 @@ object MuiClickAwayListener extends ReactBridgeComponent with MuiClickAwayListen
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     mouseEvent: js.UndefOr[Boolean | MouseEvent.Value] = js.undefined,
-    onClickAway: js.UndefOr[ReactHandler1[ReactEventFromHtml]],
+    onClickAway: js.UndefOr[ReactHandler1[F, ReactEventFromHtml]],
     touchEvent: js.UndefOr[Boolean | TouchEvent.Value] = js.undefined
   ): WithProps = auto
 }

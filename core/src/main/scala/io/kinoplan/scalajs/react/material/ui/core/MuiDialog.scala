@@ -4,6 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
+import japgolly.scalajs.react.util.Effect.Dispatch
 import org.scalajs.dom.html
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
@@ -16,22 +17,22 @@ object MuiDialog extends ReactBridgeComponent with MuiDialogExtensions {
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     classes: js.UndefOr[Map[ClassKey.Value, String]] = js.undefined,
     disableBackdropClick: js.UndefOr[Boolean] = js.undefined,
     disableEscapeKeyDown: js.UndefOr[Boolean] = js.undefined,
     fullScreen: js.UndefOr[Boolean] = js.undefined,
     fullWidth: js.UndefOr[Boolean] = js.undefined,
     maxWidth: js.UndefOr[Boolean | MaxWidth.Value] = js.undefined,
-    onBackdropClick: js.UndefOr[ReactHandler1[ReactEvent]] = js.undefined,
-    onClose: js.UndefOr[ReactHandler2[ReactEvent, String]] = js.undefined,
-    onEnter: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onEntering: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onEntered: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExit: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExiting: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExited: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onEscapeKeyDown: js.UndefOr[ReactHandler1[ReactEvent]] = js.undefined,
+    onBackdropClick: js.UndefOr[ReactHandler1[F, ReactEvent]] = js.undefined,
+    onClose: js.UndefOr[ReactHandler2[F, ReactEvent, String]] = js.undefined,
+    onEnter: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onEntering: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onEntered: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExit: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExiting: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExited: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onEscapeKeyDown: js.UndefOr[ReactHandler1[F, ReactEvent]] = js.undefined,
     open: Boolean,
     PaperComponent: js.UndefOr[ComponentPropType] = js.undefined,
     PaperProps: js.UndefOr[js.Object] = js.undefined,
@@ -49,7 +50,7 @@ object MuiDialog extends ReactBridgeComponent with MuiDialogExtensions {
     disableRestoreFocus: js.UndefOr[Boolean] = js.undefined,
     hideBackdrop: js.UndefOr[Boolean] = js.undefined,
     keepMounted: js.UndefOr[Boolean] = js.undefined,
-    onRendered: js.UndefOr[JsFun0] = js.undefined
+    onRendered: js.UndefOr[JsFun0[F]] = js.undefined
   ): WithProps = auto
 }
 

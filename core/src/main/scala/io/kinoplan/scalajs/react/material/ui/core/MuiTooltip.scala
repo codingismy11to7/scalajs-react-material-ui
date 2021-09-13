@@ -3,6 +3,7 @@ package io.kinoplan.scalajs.react.material.ui.core
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
+import japgolly.scalajs.react.util.Effect.Dispatch
 import japgolly.scalajs.react.vdom.html_<^._
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
@@ -15,7 +16,7 @@ object MuiTooltip extends ReactBridgeComponent with MuiTooltipExtensions {
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     classes: js.UndefOr[Map[ClassKey.Value, String]] = js.undefined,
     disableFocusListener: js.UndefOr[Boolean] = js.undefined,
     disableHoverListener: js.UndefOr[Boolean] = js.undefined,
@@ -25,8 +26,8 @@ object MuiTooltip extends ReactBridgeComponent with MuiTooltipExtensions {
     interactive: js.UndefOr[Boolean] = js.undefined,
     leaveDelay: js.UndefOr[Int] = js.undefined,
     leaveTouchDelay: js.UndefOr[Int] = js.undefined,
-    onClose: js.UndefOr[ReactHandler1[ReactEventFromHtml]] = js.undefined,
-    onOpen: js.UndefOr[ReactHandler1[ReactEventFromHtml]] = js.undefined,
+    onClose: js.UndefOr[ReactHandler1[F, ReactEventFromHtml]] = js.undefined,
+    onOpen: js.UndefOr[ReactHandler1[F, ReactEventFromHtml]] = js.undefined,
     open: js.UndefOr[Boolean] = js.undefined,
     placement: js.UndefOr[Placement.Value] = js.undefined,
     PopperProps: js.UndefOr[js.Object] = js.undefined,

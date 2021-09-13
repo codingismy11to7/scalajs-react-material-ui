@@ -4,6 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
+import japgolly.scalajs.react.util.Effect.Dispatch
 import japgolly.scalajs.react.vdom.html_<^._
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithPropsNoChildren}
@@ -16,7 +17,7 @@ object MuiTablePagination extends ReactBridgeComponent with MuiTablePaginationEx
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_]: Dispatch](
     ActionsComponent: js.UndefOr[ComponentPropType] = js.undefined,
     backIconButtonProps: js.UndefOr[js.Object] = js.undefined,
     classes: js.UndefOr[Map[ClassKey.Value, String]] = js.undefined,
@@ -25,8 +26,8 @@ object MuiTablePagination extends ReactBridgeComponent with MuiTablePaginationEx
     labelDisplayedRows: js.UndefOr[js.Function] = js.undefined,
     labelRowsPerPage: js.UndefOr[VdomNode] = js.undefined,
     nextIconButtonProps: js.UndefOr[js.Object] = js.undefined,
-    onChangePage: js.UndefOr[ReactHandler2[ReactEvent, Int]] = js.undefined,
-    onChangeRowsPerPage: js.UndefOr[ReactHandler1[ReactEventFromNumberInput]] = js.undefined,
+    onChangePage: js.UndefOr[ReactHandler2[F, ReactEvent, Int]] = js.undefined,
+    onChangeRowsPerPage: js.UndefOr[ReactHandler1[F, ReactEventFromNumberInput]] = js.undefined,
     page: Int,
     rowsPerPage: Int,
     rowsPerPageOptions: js.UndefOr[js.Array[Int]] = js.undefined,

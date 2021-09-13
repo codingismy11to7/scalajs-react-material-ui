@@ -3,6 +3,8 @@ package io.kinoplan.scalajs.react.material.ui.core
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
+import japgolly.scalajs.react.util.Effect.Dispatch
+
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
 import io.kinoplan.scalajs.react.material.ui.html.ReactEvent
 
@@ -13,10 +15,10 @@ object MuiBottomNavigation extends ReactBridgeComponent with MuiBottomNavigation
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     classes: js.UndefOr[Map[ClassKey.Value, String]] = js.undefined,
     component: js.UndefOr[ComponentPropType] = js.undefined,
-    onChange: js.UndefOr[ReactHandler2[ReactEvent, js.Any]] = js.undefined,
+    onChange: js.UndefOr[ReactHandler2[F, ReactEvent, js.Any]] = js.undefined,
     showLabels: js.UndefOr[Boolean] = js.undefined
   ): WithProps = auto
 }

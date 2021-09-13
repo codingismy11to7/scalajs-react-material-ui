@@ -1,8 +1,10 @@
 lazy val root =
+/*
   if (Settings.isDemoEnabled)
     project.in(file(".")).aggregate(core, icons, lab, bridge, demo).configure(Settings.rootProject)
   else
-    project.in(file(".")).aggregate(core, icons, lab, bridge).configure(Settings.rootProject)
+*/
+    project.in(file(".")).aggregate(core, /*icons, lab,*/ bridge).configure(Settings.rootProject)
 
 inThisBuild(
   List(
@@ -46,6 +48,7 @@ lazy val core = (project in file("core"))
 
 lazy val muiIconsGenerator = taskKey[Seq[File]]("mui-icons-generator")
 
+/*
 lazy val icons = (project in file("icons"))
   .dependsOn(bridge)
   .configure(commonProfile)
@@ -89,6 +92,7 @@ lazy val demo = (project in file("demo")).dependsOn(core, lab, bridge)
   webpackConfigFile in fastOptJS := Some(baseDirectory.value / "dev.webpack.config.js"),
   skip in publish := true
 ).enablePlugins(ScalablyTypedConverterPlugin)
+*/
 
 lazy val bridge = (project in file("utils/bridge"))
   .configure(commonProfile)

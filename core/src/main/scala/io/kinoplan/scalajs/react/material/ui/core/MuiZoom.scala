@@ -4,6 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
+import japgolly.scalajs.react.util.Effect.Dispatch
 import org.scalajs.dom.html
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
@@ -15,7 +16,7 @@ object MuiZoom extends ReactBridgeComponent {
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     in: js.UndefOr[Boolean] = js.undefined,
     mountOnEnter: js.UndefOr[Boolean] = js.undefined,
     unmountOnExit: js.UndefOr[Boolean] = js.undefined,
@@ -23,11 +24,11 @@ object MuiZoom extends ReactBridgeComponent {
     enter: js.UndefOr[Boolean] = js.undefined,
     exit: js.UndefOr[Boolean] = js.undefined,
     timeout: js.UndefOr[Int | js.Object] = js.undefined,
-    onEnter: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onEntering: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onEntered: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExit: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExiting: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExited: js.UndefOr[Handler1[html.Element]] = js.undefined
+    onEnter: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onEntering: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onEntered: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExit: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExiting: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExited: js.UndefOr[Handler1[F, html.Element]] = js.undefined
   ): WithProps = auto
 }

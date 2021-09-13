@@ -4,6 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
+import japgolly.scalajs.react.util.Effect.Dispatch
 import org.scalajs.dom.html
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
@@ -15,7 +16,7 @@ object MuiCollapse extends ReactBridgeComponent with MuiCollapseExtensions {
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     classes: js.UndefOr[Map[ClassKey.Value, String]] =js.undefined,
     collapsedHeight: js.UndefOr[String] = js.undefined,
     component: js.UndefOr[ComponentPropType] = js.undefined,
@@ -26,12 +27,12 @@ object MuiCollapse extends ReactBridgeComponent with MuiCollapseExtensions {
     enter: js.UndefOr[Boolean] = js.undefined,
     exit: js.UndefOr[Boolean] = js.undefined,
     timeout: js.UndefOr[Int | Timeout.Value] = js.undefined,
-    onEnter: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onEntering: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onEntered: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExit: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExiting: js.UndefOr[Handler1[html.Element]] = js.undefined,
-    onExited: js.UndefOr[Handler1[html.Element]] = js.undefined
+    onEnter: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onEntering: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onEntered: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExit: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExiting: js.UndefOr[Handler1[F, html.Element]] = js.undefined,
+    onExited: js.UndefOr[Handler1[F, html.Element]] = js.undefined
   ): WithProps = auto
 }
 

@@ -99,7 +99,7 @@ object ReactBridgeComponent {
       val params = c.internal.enclosingOwner.asMethod.paramLists.flatten.filter(!_.isImplicit)
       val convertedProps = params.map { param =>
         val paramType = c.typecheck(Ident(param.name)).tpe
-        c.echo(c.enclosingPosition, s"got paramType ${paramType}")
+//        c.echo(c.enclosingPosition, s"got paramType ${paramType}")
         val converted = {
           val conv = c.inferImplicitValue(appliedType(typeOf[JsWriter[_]], paramType :: Nil))
 

@@ -4,6 +4,8 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
+import japgolly.scalajs.react.util.Effect.Dispatch
+
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
 import io.kinoplan.scalajs.react.material.ui.html.ReactEventFromHtml
 
@@ -14,12 +16,12 @@ object MuiDrawer extends ReactBridgeComponent with MuiDrawerExtensions {
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     anchor: js.UndefOr[Anchor.Value] = js.undefined,
     classes: js.UndefOr[Map[ClassKey.Value, String]] = js.undefined,
     elevation: js.UndefOr[Int] = js.undefined,
     ModalProps: js.UndefOr[js.Object] = js.undefined,
-    onClose: js.UndefOr[ReactHandler1[ReactEventFromHtml]] = js.undefined,
+    onClose: js.UndefOr[ReactHandler1[F, ReactEventFromHtml]] = js.undefined,
     open: js.UndefOr[Boolean] = js.undefined,
     PaperProps: js.UndefOr[js.Object] = js.undefined,
     SlideProps: js.UndefOr[js.Object] = js.undefined,

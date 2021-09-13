@@ -5,6 +5,7 @@ import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
 import japgolly.scalajs.react.facade.React
+import japgolly.scalajs.react.util.Effect.Dispatch
 import japgolly.scalajs.react.vdom.html_<^.VdomNode
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithProps}
@@ -17,7 +18,7 @@ object MuiSelect extends ReactBridgeComponent with MuiSelectExtensions {
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     autoWidth: js.UndefOr[Boolean] = js.undefined,
     classes: js.UndefOr[Map[ClassKey.Value, String]] = js.undefined,
     displayEmpty: js.UndefOr[Boolean] = js.undefined,
@@ -27,8 +28,8 @@ object MuiSelect extends ReactBridgeComponent with MuiSelectExtensions {
     MenuProps: js.UndefOr[js.Object] = js.undefined,
     multiple: js.UndefOr[Boolean] = js.undefined,
     native: js.UndefOr[Boolean] = js.undefined,
-    onClose: js.UndefOr[ReactHandler1[ReactEventFromInput]] = js.undefined,
-    onOpen: js.UndefOr[ReactHandler1[ReactEventFromInput]] = js.undefined,
+    onClose: js.UndefOr[ReactHandler1[F, ReactEventFromInput]] = js.undefined,
+    onOpen: js.UndefOr[ReactHandler1[F, ReactEventFromInput]] = js.undefined,
     open: js.UndefOr[Boolean] = js.undefined,
     renderValue: js.UndefOr[js.Any => React.Node] = js.undefined,
     SelectDisplayProps: js.UndefOr[js.Object] = js.undefined,

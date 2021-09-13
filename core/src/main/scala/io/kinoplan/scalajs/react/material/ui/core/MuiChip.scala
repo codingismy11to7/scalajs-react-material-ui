@@ -4,6 +4,7 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 
 import japgolly.scalajs.react.facade.React
+import japgolly.scalajs.react.util.Effect.Dispatch
 import japgolly.scalajs.react.vdom.html_<^._
 
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithPropsNoChildren}
@@ -16,7 +17,7 @@ object MuiChip extends ReactBridgeComponent with MuiChipExtensions {
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     avatar: js.UndefOr[React.Element] = js.undefined,
     classes: js.UndefOr[Map[ClassKey.Value, String]] = js.undefined,
     clickable: js.UndefOr[Boolean] = js.undefined,
@@ -25,7 +26,7 @@ object MuiChip extends ReactBridgeComponent with MuiChipExtensions {
     deleteIcon: js.UndefOr[React.Element] = js.undefined,
     icon: js.UndefOr[React.Element] = js.undefined,
     label: js.UndefOr[VdomNode] = js.undefined,
-    onDelete: js.UndefOr[ReactHandler1[ReactEvent]] = js.undefined,
+    onDelete: js.UndefOr[ReactHandler1[F, ReactEvent]] = js.undefined,
     variant: js.UndefOr[Variant.Value] = js.undefined
   ): WithPropsNoChildren = autoNoChildren
 }

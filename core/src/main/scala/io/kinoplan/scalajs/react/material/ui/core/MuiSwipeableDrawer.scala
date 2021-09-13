@@ -4,6 +4,8 @@ import scala.scalajs.js
 import scala.scalajs.js.annotation.JSImport
 import scala.scalajs.js.|
 
+import japgolly.scalajs.react.util.Effect.Dispatch
+
 import io.kinoplan.scalajs.react.bridge.{ReactBridgeComponent, WithPropsNoChildren}
 import io.kinoplan.scalajs.react.material.ui.html.ReactEventFromHtml
 
@@ -14,14 +16,14 @@ object MuiSwipeableDrawer extends ReactBridgeComponent with MuiSwipeableDrawerEx
   @js.native
   object RawComponent extends js.Function
 
-  def apply(
+  def apply[F[_] : Dispatch](
     disableBackdropTransition: js.UndefOr[Boolean] = js.undefined,
     disableDiscovery: js.UndefOr[Boolean] = js.undefined,
     disableSwipeToOpen: js.UndefOr[Boolean] = js.undefined,
     hysteresis: js.UndefOr[Double] = js.undefined,
     minFlingVelocity: js.UndefOr[Int] = js.undefined,
-    onClose: js.UndefOr[ReactHandler1[ReactEventFromHtml]],
-    onOpen: js.UndefOr[ReactHandler1[ReactEventFromHtml]],
+    onClose: js.UndefOr[ReactHandler1[F, ReactEventFromHtml]],
+    onOpen: js.UndefOr[ReactHandler1[F, ReactEventFromHtml]],
     open: Boolean,
     SwipeAreaProps: js.UndefOr[js.Object] = js.undefined,
     swipeAreaWidth: js.UndefOr[Int] = js.undefined,
